@@ -26,6 +26,8 @@ public class Excel
 		WebElement textElmnt=driver.findElement(By.xpath("//td[text()='Java']"));
 		String text=textElmnt.getText();
 		System.out.println("WebTable text is "+text);
+		
+		
 		FileInputStream fis=new FileInputStream("./input/Excel.xlsx");
 		Workbook wb=WorkbookFactory.create(fis);
 		Sheet s=wb.getSheet("Sheet1");
@@ -34,7 +36,7 @@ public class Excel
 		System.out.println(c);
 		if(text.equals(c))
 		{
-		//	driver.findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
+			driver.findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
 			System.out.println("Test is PASS");
 		}
 		else
